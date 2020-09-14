@@ -1,0 +1,16 @@
+<div class="home-page">
+    <% display_movies.each do |display| %>
+        <div class=" display image-banner">
+            <a href="/movie?title=<%= display["Title"] %>"><img src="<%= display["Poster"] %>"></a>
+            <div class="banner-description">
+                <h2><%= display["Title"] %></h2>
+                <p><%= display["Year"] %></p>
+                <p><%= display["Runtime"] %></p>
+                <div class="ratings">
+                    <p><i class="fa fa-star" aria-hidden="true"></i><%= display["Ratings"]["Value"] %></p>
+                    <p class="display"><%= display["Ratings"]["Source"] %></p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+ </div>

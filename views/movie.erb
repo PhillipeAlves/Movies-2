@@ -1,0 +1,29 @@
+<div class="container">
+    
+    <!-- Description -->
+
+    <h1><%= movie["Title"] %> <span class="year">(<%= movie["Year"] %>)</span></h1>
+    <ul class="under-title">
+        <li><%= movie["Runtime"] %></li>
+        <li><%= movie["Genre"] %></li>
+    </ul>
+    <p><span class="description">Director: </span><%= movie["Director"] %></p>
+    <p><span class="description">Stars: </span> <%= movie["Actors"] %></p>
+    
+    <!-- Poster -->
+    
+    <div class="main">
+        <div class="image-banner">
+            <img src="<%= movie["Poster"] %>">
+            <div class="banner-description">
+                <p><%= movie["Plot"] %></p>
+            </div>
+        </div>
+        <div class="ratings">
+            <% movie["Ratings"].each do |index| %>
+                <p><i class="fa fa-star" aria-hidden="true"></i><%= [index][0]["Value"] %></p>
+                <p class="source"><%= [index][0]["Source"] %></p>
+            <% end %>
+        </div>
+    </div>
+</div>
